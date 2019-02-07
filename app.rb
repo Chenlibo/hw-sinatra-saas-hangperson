@@ -67,18 +67,20 @@ class HangpersonApp < Sinatra::Base
   
   get '/win' do
     ### YOUR CODE HERE ###
-    if @game.check_win_or_lose != :win
+    if @game.check_win_or_lose == :win
+      erb :win
+    else
       erb :show
     end
-    erb :win # You may change/remove this line
   end
   
   get '/lose' do
     ### YOUR CODE HERE ###
-    if @game.check_win_or_lose != :lose
+    if @game.check_win_or_lose == :lose
+      erb :lose
+    else
       erb :show
     end
-    erb :lose # You may change/remove this line
   end
   
 end
