@@ -37,7 +37,7 @@ class HangpersonGame
   def check_win_or_lose
     if self.word_with_guesses == self.word
       return :win
-    elsif self.guesses.size + self.wrong_guesses.size > 6
+    elsif self.wrong_guesses.size > 6
       return :lose
     else
       return :play
