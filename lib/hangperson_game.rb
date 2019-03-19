@@ -18,7 +18,7 @@ class HangpersonGame
   
   def guess(letter)
     #guessing with multiple letters seems to be undefine
-    if letter == nil or letter.empty? or /[^[:alpha:]]/.match? letter # nil, empty or non-alphabetic
+    if letter.nil? or letter.empty? or /[^[:alpha:]]/.match? letter # nil, empty or non-alphabetic
       raise ArgumentError.new("Invalid guess")
     elsif self.guesses.downcase.include? letter.downcase or self.wrong_guesses.downcase.include? letter.downcase # the letter has been guessed before whether correct or not
       return false
